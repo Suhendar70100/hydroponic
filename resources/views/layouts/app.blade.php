@@ -137,29 +137,18 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <li class="menu-item {{ Request::is('/') ? 'active' : '' }}">
+              <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
-                <div class="badge bg-primary rounded-pill ms-auto">3</div>
               </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="dashboards-ecommerce.html" class="menu-link">
-                    <div data-i18n="eCommerce">eCommerce</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="dashboards-crm.html" class="menu-link">
-                    <div data-i18n="CRM">CRM</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="index.html" class="menu-link">
-                    <div data-i18n="Analytics">Analytics</div>
-                  </a>
-                </li>
-              </ul>
+            </li>
+
+            <li class="menu-item {{ Request::is('chart') ? 'active' : '' }}">
+              <a href="{{ route('chart') }}" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-database-edit-outline"></i>
+                <div data-i18n="Data">Data</div>
+              </a>
             </li>
 
             <!-- Layouts -->
@@ -281,7 +270,7 @@
                 <div data-i18n="Users">Users</div>
               </a>
               <ul class="menu-sub">
-                <li class="menu-item active">
+                <li class="menu-item">
                   <a href="app-user-list.html" class="menu-link">
                     <div data-i18n="List">List</div>
                   </a>
